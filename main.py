@@ -3,6 +3,8 @@ MASS = [[] for i in range(TABLE_SIZE)]
 
 
 def hash(ident):
+    if len(ident) < 3:
+        ident += chr(0)*(3-len(ident))
     ident = ident.upper()
     number = ord(ident[0])+ord(ident[1])+ord(ident[2])
     return number
